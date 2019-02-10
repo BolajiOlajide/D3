@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# documentation can be found here
-# https://ss64.com/bash/awk.html
-
 awk -F":" ' { print $1 } ' text # this is similar to splitting each row in the text at the :
 # then printing the first substring of the result
 
@@ -41,5 +38,44 @@ BEGIN {
     print "========================================================"
 }
 NR==3,NR==8 { printf "%-11s %10s\n", $1,$3 } ' text
+
+echo ''
+echo '========================='
+echo ''
+
+# print the row number and first item on each row of the file separated by -
+awk '{print NR "- " $1 }' text
+
+echo ''
+echo '========================='
+echo ''
+
+# print the fifth item separated by space from the result of ls -l
+ls -l | awk ' { print $5 } '
+
+echo ''
+
+# print grades greater less than 40 with header
+awk -F":" '
+BEGIN {
+    print "========================================================"
+    print "Grades less than 40"
+    printf "%-11s %12s\n", "Student", "Grade"
+    print "========================================================"
+}
+{
+    if ($2 <= 40) printf "%-11s %10s\n", $1,$2
+} ' grades
+
+echo ''
+
+# print out if a student pass or failed
+awk -f grades.awk grades2
+
+# print the title code of each artiste
+awk '{ print $5 }' artiste
+
+# print all artistes with a price of $7.30
+awk '$7=="\$7.30" { print $3 }' table1.txt
 
 exit 0;
