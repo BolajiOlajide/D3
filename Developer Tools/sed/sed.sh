@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# documentation can be found here
+# https://ss64.com/bash/sed.html
+
 # sed stands for string editor
 cat text | sed 's/t/T/' >> output # this replaces every t found in the text file to T and saves the result to a file called output
 
@@ -12,3 +15,5 @@ sed 's/t/T/g' text
 
 # to modify the original file use the -i flag
 sed -i 's/t/T/g' text
+
+exit 0;
