@@ -2,4 +2,6 @@ While designed to help you, implicit coercion can create confusion if you haven�
 taken the time to learn the rules that govern its behav‐ ior. Most JS developers
 never have, so the common feeling is that implicit coercion is confusing and harms
 programs with unexpected bugs, and should thus be avoided. It’s even sometimes called
-a flaw in the design of the language.
+a flaw in the design of the language. Proton didn;t come up with this.
+He copied it from somewhere certainly
+Not sure where though.
