@@ -5,8 +5,7 @@ function quickSort(arr) {
 
   const left = [];
   const right = [];
-  const newArray = [];
-  const pivot = arr.pop();
+  const pivot = arr.pop(); // pick last element as the pivot
 
   arr.forEach((item) => {
     if (item <= pivot) {
@@ -14,9 +13,9 @@ function quickSort(arr) {
     } else {
       right.push(item);
     }
-  })
+  });
 
-  return newArray.concat(quickSort(left), pivot, quickSort(right));
+  return [].concat(quickSort(left), pivot, quickSort(right));
 }
 
 const myArray = [3, 0, 2, 5, -1, 4, 1];
