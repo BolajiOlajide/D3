@@ -1,0 +1,11 @@
+this is a sample
+
+file that should
+
+contain some blank lines
+
+
+
+
+
+but the awk script should ignore it
